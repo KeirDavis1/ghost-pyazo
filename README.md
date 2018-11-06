@@ -14,3 +14,15 @@ git clone https://github.com/KeirDavis1/ghost-pyazo
 cd ghost-pyazo
 npm install
 ```
+
+Add the following to your configuration file:
+
+```
+"storage": {
+	"active": "ghost-pyazo",
+	"ghost-pyazo": {
+		"uploadEndpoint": "https://localhost:5000/upload",
+		"username": "pyazouser"
+	}
+}
+```

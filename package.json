@@ -1,32 +1,33 @@
 {
-    "name": "ghost-pyazo",
-    "version": "1.0.0",
-    "description": "Storage on Pyazo for Ghost.",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/keirdavis1/ghost-pyazo.git"
-    },
-    "keywords": [
-        "adapter",
-        "blog",
-        "ghost",
-        "pyazo",
-        "storage",
-        "store"
-    ],
-    "author": "Keir Davis <keirjdavis@gmail.com> (https://sneezey.uk)",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/keirdavis1/ghost-pyazo/issues"
-    },
-    "homepage": "https://github.com/keirdavis1/ghost-pyazo#readme",
-    "dependencies": {
-        "bluebird": "^3.3.1",
-        "ghost-storage-base": "0.0.1",
-        "request": "2.81.0"
-    }
+  "name": "ghost-pyazo",
+  "version": "1.0.0",
+  "description": "Storage on Pyazo for Ghost.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keirdavis1/ghost-pyazo.git"
+  },
+  "keywords": [
+    "adapter",
+    "blog",
+    "ghost",
+    "pyazo",
+    "storage",
+    "store"
+  ],
+  "author": "Keir Davis <keirjdavis@gmail.com> (https://sneezey.uk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keirdavis1/ghost-pyazo/issues"
+  },
+  "homepage": "https://github.com/keirdavis1/ghost-pyazo#readme",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "ghost-storage-base": "0.0.1",
+    "request": "2.81.0",
+    "request-promise": "^4.2.2"
+  }
 }

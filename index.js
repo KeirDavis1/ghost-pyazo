@@ -2,7 +2,7 @@
 
 var Promise = require('bluebird')
 var BaseAdapter = require('ghost-storage-base');
-var Request = require("request");
+var RequestPromise = require('request-promise');
 
 class PyazoAdapter extends BaseAdapter {
   constructor(config) {
@@ -15,8 +15,21 @@ class PyazoAdapter extends BaseAdapter {
     return Promise.resolve(true);
   }
 
-  save() {
-    return Promise.reject("Not implemented");
+  save(image) {
+    var formData = {
+      imagedata: fs.createReadStream(image),
+      username: this.username,
+      id: "foo"
+    };
+
+    return RequestPromise.post({ url: this.uploadEndpoint, formData: formData })
+      .then(function successCallback(response) {
+        console.log(response);
+        return "http://good.com/img.svg"
+      }, function failedCallback(response){
+        console.error(response);
+        return "http://error.com/img.svg"
+      });
   }
 
   serve() {
@@ -30,7 +43,7 @@ class PyazoAdapter extends BaseAdapter {
   }
 
   read() {
-    return Promise.reject("Not implemented");
+
   }
 }
 
