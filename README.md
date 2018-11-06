@@ -7,6 +7,7 @@ Ghost Pyazo Adapter for Storage
 Clone this repository into ghost's content/adapters folder.
 
 ```
+sudo apt-get install git
 cd [ghost's content directory]
 mkdir -p adapters/storage
 cd adapters/storage
