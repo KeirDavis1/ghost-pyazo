@@ -25,6 +25,8 @@
     },
     "homepage": "https://github.com/keirdavis1/ghost-pyazo#readme",
     "dependencies": {
-        "ghost-storage-base": "0.0.1"
+        "bluebird": "^3.3.1",
+        "ghost-storage-base": "0.0.1",
+        "request": "2.81.0"
     }
 }
