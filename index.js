@@ -3,6 +3,7 @@
 var Promise = require('bluebird')
 var BaseAdapter = require('ghost-storage-base');
 var RequestPromise = require('request-promise');
+var fs = require('fs');
 
 class PyazoAdapter extends BaseAdapter {
   constructor(config) {
