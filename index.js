@@ -18,18 +18,29 @@ class PyazoAdapter extends BaseAdapter {
 
   save(image) {
     var formData = {
-      imagedata: fs.createReadStream(image),
-      username: this.username,
+      imagedata: {
+        value: fs.createReadStream(image.path),
+        options: {
+          filename: image.name,
+          contentType: image.mimetype
+        }
+      },
       id: "foo"
     };
 
-    return RequestPromise.post({ url: this.uploadEndpoint, formData: formData })
+    var options = {
+      method: 'POST',
+      uri: this.config.uploadEndpoint,
+      formData: formData,
+      resolveWithFullResponse: true
+    };
+
+    return RequestPromise(options)
       .then(function successCallback(response) {
-        console.log(response);
-        return "http://good.com/img.svg"
+        return response.body;
       }, function failedCallback(response){
-        console.error(response);
-        return "http://error.com/img.svg"
+        console.error("FAILED" + response);
+        Promise.reject(response);
       });
   }
 
